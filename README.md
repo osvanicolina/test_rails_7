@@ -94,6 +94,16 @@ Things you may want to cover:
         ```
             rails --version
         ```
+        
+* Install gems:
+    ```
+        bundle install
+    ```
+
+* Run project locally: 
+    ```
+        rails s
+    ```
 
 * Database creation
 
