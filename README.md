@@ -95,6 +95,31 @@ Things you may want to cover:
             rails --version
         ```
 
+* Install gems:
+    ```
+        bundle install
+    ```
+
+* Run project locally: 
+    ```
+        rails s
+    ```
+
+* Generate migrations
+    ```
+        rails generate migration <migration_name>
+    ```
+
+* Run migrations
+    ```
+        rails db:migrate
+    ```
+
+* Rollback migrations
+    ```
+        rails db:rollback
+    ```
+
 * Database creation
 
 * Database initialization
