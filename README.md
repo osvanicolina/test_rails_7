@@ -120,6 +120,11 @@ Things you may want to cover:
         rails db:rollback
     ```
 
+* Use rails console:
+    ```
+        rails c
+    ```
+
 * Database creation
 
 * Database initialization
