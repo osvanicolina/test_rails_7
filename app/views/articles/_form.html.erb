@@ -1,28 +1,48 @@
-<% if @article.errors.any? %>
-    <h2>
-        The following errors prevented the article from being saved:
-    </h2>
+<div class="container">
+    <% if @article.errors.any? %>
+        <h2>
+            The following errors prevented the article from being saved:
+        </h2>
 
-    <ul>
-        <% @article.errors.full_messages.each do |message| %>
-            <li>
-                <%= message %>
-            </li>
-        <% end %>
-    </ul>
-        
-<% end %>
+        <ul>
+            <% @article.errors.full_messages.each do |message| %>
+                <li>
+                    <%= message %>
+                </li>
+            <% end %>
+        </ul>
+            
+    <% end %>
 
-<%= form_with(model: @article, local: true, data: { turbo: false }) do |f| %>
+
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <%= form_with(model: @article, local: true, data: { turbo: false }, class: "shadow p-3 mb-3 bg-info rounded") do |f| %>
+                <div class="row mt-3">
+                    <%= f.label :title, class: "col-2 col-form-label text-light" %>
+                    <div class="col-10">
+                        <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <%= f.label :description, class: "col-2 col-form-label text-light" %>
+                    <div class="col-10">
+                        <%= f.text_area :description, rows: 10, class: "form-control  shadow rounded", placeholder: "Description of article" %>
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <%= f.submit class: "btn btn-outline-dark" %>
+                </div>
+            <% end %>
+        </div>
+            
+    </div>
+    
+
     <p>
-        <%= f.label :title %>
-        <%= f.text_field :title %>
+        <%= link_to 'Back', articles_path, class: "text-info" %>
     </p>
-
-    <p>
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-    </p>
-
-    <%= f.submit %>
-<% end %>
+</div>    
+    
