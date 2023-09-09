@@ -27,7 +27,7 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <%= f.submit "Sign up", class: "btn btn-outline-light" %>
+                    <%= f.submit(@user.new_record?  ? "Sign up": "Updated account", class: "btn btn-outline-light") %>
                 </div>
             <% end %>
         </div>
